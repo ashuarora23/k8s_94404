@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod23
+spec:
+  containers:
+  - name: con1
+    image: quay.io/rehman0288/webapp
+    envFrom:
+      - configMapRef:
+          name: myconfig

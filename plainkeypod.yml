@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod21
+spec:
+  containers:
+  - name: con1
+    image: quay.io/rehman0288/webapp
+    env:
+      - name: NAME
+        value: varun
+      - name: PASS
+        value: redhat
