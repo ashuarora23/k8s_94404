@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: internal
+spec:
+  type: ClusterIP
+  selector:
+    app: deploy
+  ports:
+    - targetPort: 80
+      port: 80

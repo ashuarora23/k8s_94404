@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: deploy
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: deploy
+    spec:
+      containers:
+        - name: con
+          image: quay.io/rehman0288/production:v3

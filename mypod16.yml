@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod16
+spec:
+  containers:
+  - name: con1
+    image: quay.io/rehman0288/webapp
+    ports:
+    - containerPort: 80
+    volumeMounts:
+      - mountPath: /mydata
+        name: vol1
+      - mountPath: /home
+        name: vol2
+
+  volumes:
+    - name: vol1
+      emptyDir: {}
+    - name: vol2
+      emptyDir: {}

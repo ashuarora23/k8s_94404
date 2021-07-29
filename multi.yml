@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multipod
+spec:
+  containers:
+    - name: con1
+      image: quay.io/rehman0288/nginx
+    - name: con2
+      image: quay.io/rehman0288/busybox
+      command: 
+        - sleep
+        - "3600"

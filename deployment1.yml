@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+spec:
+  replicas: 8
+  selector:
+    matchLabels:
+      app: deploy
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: deploy
+    spec:
+      containers:
+        - name: con
+          image: quay.io/rehman0288/production:v3
+
+      tolerations:
+        - key: size
+          operator: Equal
+          value: large
+          effect: NoSchedule

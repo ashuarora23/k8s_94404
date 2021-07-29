@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod7
+  labels:
+    env: dev
+    tier: frontend
+spec:
+  nodeSelector:
+    disk: ssd
+  containers:
+  - name: con1
+    image: quay.io/rehman0288/webapp
+    ports:
+    - containerPort: 80
+    imagePullPolicy: IfNotPresent
