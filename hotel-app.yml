@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-app
+  namespace: hotel
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hotel
+  template:
+    metadata:
+      labels:
+        app: hotel
+    spec:
+      containers:
+        - name: con
+          image: quay.io/rehman0288/hotel
+          ports:
+          - containerPort: 80
